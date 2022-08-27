@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title  }}{% endblock title %}
+
+{% block content %}
+
+<h1>Text to Morse Code Translate</h1>
+<br />
+
+{% if data %}
+<h4>{{ data }}</h4>
+{% endif %}
+<form action='' method='POST'>
+	{{ form.hidden_tag()  }}
+
+	{{ form.morse.label(class='form-label')  }}
+	{{ form.morse(class='form-control') }}
+	<br />
+	{{ form.submit_btn(class='btn btn-primary') }}
+</form>
+{% endblock content %}
+

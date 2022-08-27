@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<h1>Morse Code to Text</h1>
+<br />
+
+{% if data %}
+<h4>{{ data }}</h4>
+{% endif %}
+<form action='' method='POST'>
+	{{ form.hidden_tag() }}
+
+	{{ form.morse.label(class='form-label') }}
+	{{ form.morse(class='form-control') }}
+	<br />
+	{{ form.submit_btn(class='btn btn-primary') }}
+</form>
+<p style="color: #dc143c;">Please dont add space or new line in the end otherwise the ending word may have some missing character.</p>
+{% endblock content %}
+
